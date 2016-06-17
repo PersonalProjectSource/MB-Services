@@ -1,0 +1,10 @@
+mb_admin_homepage:
+    path:     /admin/
+    defaults:
+        _controller: "MBAdminBundle:Default:index"
+
+mb_admin_login:
+    path:     /login/
+    defaults:
+        _controller: "MBAdminBundle:Security:login"
+#        _controller: "FOSUserBundle:Security:login"

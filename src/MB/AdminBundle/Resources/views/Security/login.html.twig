@@ -1,0 +1,65 @@
+{% extends "::base.html.twig" %}
+{%  block bodyclass %}login-body{% endblock bodyclass %}
+{% block body %}
+<div class="container">
+    <form class="form-signin" action="{{ path("fos_user_security_check") }}" method="post">
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+        <h2 class="form-signin-heading">Espace administrateur</h2>
+        <div class="login-wrap">
+            <input type="text" name="_username" class="form-control" placeholder="E-mail" autofocus>
+            <input type="password" name="_password" class="form-control" placeholder="Mot de passe">
+            <label class="checkbox">
+                <input type="checkbox" value="remember-me"> Se souvenir de moi
+                <span class="pull-right">
+                    <a data-toggle="modal" href="#myModal"> Mot de passe oublié ?</a>
+
+                </span>
+            </label>
+            <button class="btn btn-lg btn-login btn-block" name="_submit" type="submit">Connecter</button>
+            <p>ou connextez-vous avec les réseaux sociaux</p>
+            <div class="login-social-link">
+                <a href="index.html" class="facebook">
+                    <i class="fa fa-facebook"></i>
+                    Facebook
+                </a>
+                <a href="index.html" class="twitter">
+                    <i class="fa fa-twitter"></i>
+                    Twitter
+                </a>
+            </div>
+            <div class="registration">
+                Vous n'avez pas de comptes ?
+                <a class="" href="registration.html">
+                    Créer votre compte
+                </a>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Forgot Password ?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Enter your e-mail address below to reset your password.</p>
+                        <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
+                        <button class="btn btn-success" type="button">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal -->
+    </form>
+</div>
+
+<!-- js placed at the end of the document so the pages load faster -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+{% endblock body %}

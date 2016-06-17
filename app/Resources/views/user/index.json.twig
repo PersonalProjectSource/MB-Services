@@ -1,0 +1,15 @@
+{
+    "users":
+    {
+        {% for user in users %}
+        "{{ user.username }}":
+        {
+            "username": "{{ user.username }}",
+            "password": "{{ user.password }}",
+            "email" : "{{ user.email }}",
+            "actif" : "{{ user.enabled }}",
+            "lastLogin" : "{{ user.lastLogin|date('Y-m-d H:i:s') }}"
+        }{% if false == loop.last %},{% endif %}
+        {% endfor %}
+    }
+}

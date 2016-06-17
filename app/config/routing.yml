@@ -1,0 +1,19 @@
+mb_admin_user:
+    resource: "@MBAdminBundle/Controller/UserController.php"
+    type:     annotation
+
+mb_admin:
+    resource: "@MBAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+mbmb_services:
+    resource: "@MBMBServicesBundle/Resources/config/routing.yml"
+    prefix:   /
+
+# app/config/routing.yml
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

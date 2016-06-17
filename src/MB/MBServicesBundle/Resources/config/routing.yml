@@ -1,0 +1,8 @@
+mbmb_services_homepage:
+    path:     /{param}
+    defaults:
+        _controller: "MBMBServicesBundle:Default:index"
+        param: 'tototest'
+        totoparam: 'valuetoto'
+    requirements:
+        param: '(toto|tata)/?$'

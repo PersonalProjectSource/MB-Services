@@ -1,0 +1,5 @@
+services:
+    mb_user_extension:
+        class: MB\AdminBundle\TwigExtension\UserManagerExtension
+        tags:
+          - { name: twig.extension }

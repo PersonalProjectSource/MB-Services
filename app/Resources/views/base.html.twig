@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="Mosaddek">
+
+        <title>{% block title %}MB-Services, votre partenaire confiance{% endblock %}</title>
+
+        {% block css_design %}
+        <link href="{{ asset('bundles/mbadmin/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('bundles/mbadmin/css/bootstrap-reset.css') }}" rel="stylesheet">
+        <link href="{{ asset('bundles/mbadmin/assets/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
+        <link href="{{ asset('bundles/mbadmin/css/style.css') }}" rel="stylesheet">
+        <link href="{{ asset('bundles/mbadmin/css/style-responsive.css') }}" rel="stylesheet">
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->
+        {% endblock css_design %}
+        {% block stylesheets %}{% endblock stylesheets %}
+    </head>
+
+    <body class="{%  block bodyclass %}{% endblock bodyclass %}">
+        {% block body %}
+        {% endblock body %}
+        {% block javascripts %}
+        {% endblock javascripts %}
+    </body>
+</html>

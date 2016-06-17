@@ -1,0 +1,17 @@
+<!--header start-->
+<header class="header white-bg">
+    <div class="sidebar-toggle-box">
+        <div data-original-title="Toggle Navigation" data-placement="right" class="fa fa-bars tooltips"></div>
+    </div>
+    <!--logo start-->
+    <a href="index.html" class="logo" >MB<span>Administration</span></a>
+    <!--logo end-->
+    <div class="nav notify-row" id="top_menu">
+        {#TODO faire le modele de données pour la gestion des notifications#}
+        {% include "MBAdminBundle:Widget:Notification.html.twig" %}
+    </div>
+    <div class="top-nav ">
+        {% include  "MBAdminBundle:Widget:User-top-menu.html.twig" %}
+    </div>
+</header>
+<!--header end-->

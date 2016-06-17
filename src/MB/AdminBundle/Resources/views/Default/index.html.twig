@@ -1,0 +1,258 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+<section id="container">
+    <!--header start-->
+    {% include "@MBAdmin/Header/main-header.html.twig" %}
+    {% include "@MBAdmin/Menu/left-menu.html.twig" %}
+    <!--main content start-->
+    <section id="main-content">
+        <section class="wrapper">
+            {% include "@MBAdmin/Widget/statesBoard.html.twig" %}
+            <div class="row">
+                <div class="col-lg-8">
+                    <!--custom chart start-->
+                    <div class="border-head">
+                        <h3>Demande de devis cette année</h3>
+                    </div>
+                    <div class="custom-bar-chart">
+                        <ul class="y-axis">
+                            <li><span>100</span></li>
+                            <li><span>80</span></li>
+                            <li><span>60</span></li>
+                            <li><span>40</span></li>
+                            <li><span>20</span></li>
+                            <li><span>0</span></li>
+                        </ul>
+                        <div class="bar">
+                            <div class="title">JAN</div>
+                            <div class="value tooltips" data-original-title="80%" data-toggle="tooltip" data-placement="top">80%</div>
+                        </div>
+                        <div class="bar ">
+                            <div class="title">FEB</div>
+                            <div class="value tooltips" data-original-title="50%" data-toggle="tooltip" data-placement="top">50%</div>
+                        </div>
+                        <div class="bar ">
+                            <div class="title">MAR</div>
+                            <div class="value tooltips" data-original-title="40%" data-toggle="tooltip" data-placement="top">40%</div>
+                        </div>
+                        <div class="bar ">
+                            <div class="title">APR</div>
+                            <div class="value tooltips" data-original-title="55%" data-toggle="tooltip" data-placement="top">55%</div>
+                        </div>
+                        <div class="bar">
+                            <div class="title">MAY</div>
+                            <div class="value tooltips" data-original-title="20%" data-toggle="tooltip" data-placement="top">20%</div>
+                        </div>
+                        <div class="bar ">
+                            <div class="title">JUN</div>
+                            <div class="value tooltips" data-original-title="39%" data-toggle="tooltip" data-placement="top">39%</div>
+                        </div>
+                        <div class="bar">
+                            <div class="title">JUL</div>
+                            <div class="value tooltips" data-original-title="75%" data-toggle="tooltip" data-placement="top">75%</div>
+                        </div>
+                        <div class="bar ">
+                            <div class="title">AUG</div>
+                            <div class="value tooltips" data-original-title="45%" data-toggle="tooltip" data-placement="top">45%</div>
+                        </div>
+                        <div class="bar ">
+                            <div class="title">SEP</div>
+                            <div class="value tooltips" data-original-title="50%" data-toggle="tooltip" data-placement="top">50%</div>
+                        </div>
+                        <div class="bar ">
+                            <div class="title">OCT</div>
+                            <div class="value tooltips" data-original-title="42%" data-toggle="tooltip" data-placement="top">42%</div>
+                        </div>
+                        <div class="bar ">
+                            <div class="title">NOV</div>
+                            <div class="value tooltips" data-original-title="60%" data-toggle="tooltip" data-placement="top">60%</div>
+                        </div>
+                        <div class="bar ">
+                            <div class="title">DEC</div>
+                            <div class="value tooltips" data-original-title="90%" data-toggle="tooltip" data-placement="top">90%</div>
+                        </div>
+                    </div>
+                    <!--custom chart end-->
+                </div>
+                <div class="col-lg-4">
+                    <!--new earning start-->
+                    <div class="panel terques-chart">
+                        <div class="panel-body chart-texture">
+                            <div class="chart">
+                                <div class="heading">
+                                    <span>Vendredi</span>
+                                    <strong>€ 57,00 | 15%</strong>
+                                </div>
+                                <div class="sparkline" data-type="line" data-resize="true" data-height="75" data-width="90%" data-line-width="1" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff" data-spot-radius="4" data-data="[200,135,667,333,526,996,564,123,890,564,455]"></div>
+                            </div>
+                        </div>
+                        <div class="chart-tittle">
+                            <span class="title">Évolution de l'activité</span>
+                              <span class="value">
+                                  <a href="#" class="active">Volume</a>
+                                  |
+                                  <a href="#">Nouveaux clients</a>
+                                  |
+                                  <a href="#">Taux de conversion</a>
+                              </span>
+                        </div>
+                    </div>
+                    <!--new earning end-->
+
+                    <!--total earning start-->
+                    <div class="panel green-chart">
+                        <div class="panel-body">
+                            <div class="chart">
+                                <div class="heading">
+                                    <span>June</span>
+                                    <strong>23 Jours | 65%</strong>
+                                </div>
+                                <div id="barchart"></div>
+                            </div>
+                        </div>
+                        <div class="chart-tittle">
+                            <span class="title">Chiffre d'affaires</span>
+                            <span class="value">€, 76,54,678</span>
+                        </div>
+                    </div>
+                    <!--total earning end-->
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <!--work progress start-->
+                    <section class="panel">
+                        <div class="panel-body progress-panel">
+                            <div class="task-progress">
+                                <h1>Mes 5 meilleurs clients</h1>
+                                <p></p>
+                            </div>
+                        </div>
+                        <table class="table table-hover personal-task">
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    Unilever
+                                </td>
+                                <td>
+                                    <span class="badge bg-important">75%</span>
+                                </td>
+                                <td>
+                                    <div id="work-progress1"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>
+                                    Mutuelle des étudiants
+                                </td>
+                                <td>
+                                    <span class="badge bg-success">43%</span>
+                                </td>
+                                <td>
+                                    <div id="work-progress2"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>
+                                    PSA
+                                </td>
+                                <td>
+                                    <span class="badge bg-info">67%</span>
+                                </td>
+                                <td>
+                                    <div id="work-progress3"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>
+                                    Sanofi
+                                </td>
+                                <td>
+                                    <span class="badge bg-warning">30%</span>
+                                </td>
+                                <td>
+                                    <div id="work-progress4"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>
+                                    Prisma média
+                                </td>
+                                <td>
+                                    <span class="badge bg-primary">15%</span>
+                                </td>
+                                <td>
+                                    <div id="work-progress5"></div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <!--work progress end-->
+                </div>
+            </div>
+
+
+
+        </section>
+    </section>
+    <!--main content end-->
+    <!--footer start-->
+    <footer class="site-footer">
+        <div class="text-center">
+            2016 &copy; Groupe MB-Services by Laurent BRAU
+            <a href="#" class="go-top">
+                <i class="fa fa-angle-up"></i>
+            </a>
+        </div>
+    </footer>
+    <!--footer end-->
+</section>
+{% endblock body %}
+{% block javascripts %}
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="{{ asset('bundles/mbadmin/js/jquery.js') }}"></script>
+    <script src="{{ asset('bundles/mbadmin/js/jquery-1.8.3.min.js') }}"></script>
+    <script src="{{ asset('bundles/mbadmin/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('bundles/mbadmin/js/jquery.scrollTo.min.js') }}"></script>
+    <script src="{{ asset('bundles/mbadmin/js/jquery.nicescroll.js') }}"></script>
+    <script src="{{ asset('bundles/mbadmin/js/jquery.sparkline.js') }}"></script>
+    <script src="{{ asset('bundles/mbadmin/js/jquery.dcjqaccordion.2.7.js') }}"></script>
+    <script src="{{ asset('bundles/mbadmin/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js') }}"></script>
+    <script src="{{ asset('bundles/mbadmin/js/owl.carousel.js') }}"></script>
+    <script src="{{ asset('bundles/mbadmin/js/jquery.customSelect.min.js') }}"></script>
+    <script src="{{ asset('bundles/mbadmin/js/respond.min.js') }}"></script>
+    <script src="{{ asset('bundles/mbadmin/js/common-scripts.js') }}"></script>
+    <script src="{{ asset('bundles/mbadmin/js/sparkline-chart.js') }}"></script>
+    <script src="{{ asset('bundles/mbadmin/js/easy-pie-chart.js') }}"></script>
+    <script src="{{ asset('bundles/mbadmin/js/count.js') }}"></script>
+
+    <script>
+
+        //owl carousel
+
+        $(document).ready(function() {
+            $("#owl-demo").owlCarousel({
+                navigation : true,
+                slideSpeed : 300,
+                paginationSpeed : 400,
+                singleItem : true,
+                autoPlay:true
+
+            });
+        });
+
+        //custom select box
+
+        $(function(){
+            $('select.styled').customSelect();
+        });
+
+    </script>
+{% endblock javascripts %}
