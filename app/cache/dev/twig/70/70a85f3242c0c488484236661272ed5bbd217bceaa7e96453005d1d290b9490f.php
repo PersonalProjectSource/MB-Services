@@ -15,8 +15,8 @@ class __TwigTemplate_3b7252da8a4e10ee7fc43264d3e7db3964050001193d4fad6784316423a
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_e939059bd952274bdc48691ce5a888a88a84819f10b571ceff3ff97aa45460bc = $this->env->getExtension("native_profiler");
-        $__internal_e939059bd952274bdc48691ce5a888a88a84819f10b571ceff3ff97aa45460bc->enter($__internal_e939059bd952274bdc48691ce5a888a88a84819f10b571ceff3ff97aa45460bc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "MBAdminBundle:Widget:User-top-menu.html.twig"));
+        $__internal_eca3d346c0c1b1ce6728a1e1ba4196f570ab999d8898d5000ac19fdee746bb4f = $this->env->getExtension("native_profiler");
+        $__internal_eca3d346c0c1b1ce6728a1e1ba4196f570ab999d8898d5000ac19fdee746bb4f->enter($__internal_eca3d346c0c1b1ce6728a1e1ba4196f570ab999d8898d5000ac19fdee746bb4f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "MBAdminBundle:Widget:User-top-menu.html.twig"));
 
         // line 1
         echo "<ul class=\"nav pull-right top-menu\">
@@ -29,7 +29,7 @@ class __TwigTemplate_3b7252da8a4e10ee7fc43264d3e7db3964050001193d4fad6784316423a
             <img alt=\"\" src=\"img/avatar1_small.jpg\">
             <span class=\"username\">Bonjour ";
         // line 9
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["currentUser"]) ? $context["currentUser"] : $this->getContext($context, "currentUser")), "username", array()), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "html", null, true);
         echo " !</span>
             <b class=\"caret\"></b>
         </a>
@@ -44,7 +44,7 @@ class __TwigTemplate_3b7252da8a4e10ee7fc43264d3e7db3964050001193d4fad6784316423a
     <!-- user login dropdown end -->
 </ul>";
         
-        $__internal_e939059bd952274bdc48691ce5a888a88a84819f10b571ceff3ff97aa45460bc->leave($__internal_e939059bd952274bdc48691ce5a888a88a84819f10b571ceff3ff97aa45460bc_prof);
+        $__internal_eca3d346c0c1b1ce6728a1e1ba4196f570ab999d8898d5000ac19fdee746bb4f->leave($__internal_eca3d346c0c1b1ce6728a1e1ba4196f570ab999d8898d5000ac19fdee746bb4f_prof);
 
     }
 
@@ -71,7 +71,7 @@ class __TwigTemplate_3b7252da8a4e10ee7fc43264d3e7db3964050001193d4fad6784316423a
 /*     <li class="dropdown">*/
 /*         <a data-toggle="dropdown" class="dropdown-toggle" href="#">*/
 /*             <img alt="" src="img/avatar1_small.jpg">*/
-/*             <span class="username">Bonjour {{ currentUser.username }} !</span>*/
+/*             <span class="username">Bonjour {{ app.user }} !</span>*/
 /*             <b class="caret"></b>*/
 /*         </a>*/
 /*         <ul class="dropdown-menu extended logout">*/

@@ -105,6 +105,79 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/demandedevis')) {
+            // demandedevis_index
+            if (rtrim($pathinfo, '/') === '/demandedevis') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_demandedevis_index;
+                }
+
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'demandedevis_index');
+                }
+
+                return array (  '_controller' => 'MB\\AdminBundle\\Controller\\DemandeDevisController::indexAction',  '_route' => 'demandedevis_index',);
+            }
+            not_demandedevis_index:
+
+            // demandedevis_new
+            if ($pathinfo === '/demandedevis/new') {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_demandedevis_new;
+                }
+
+                return array (  '_controller' => 'MB\\AdminBundle\\Controller\\DemandeDevisController::newAction',  '_route' => 'demandedevis_new',);
+            }
+            not_demandedevis_new:
+
+            // add_devis_ajax
+            if ($pathinfo === '/demandedevis/add') {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_add_devis_ajax;
+                }
+
+                return array (  '_controller' => 'MB\\AdminBundle\\Controller\\DemandeDevisController::addDevisAjaxAction',  '_route' => 'add_devis_ajax',);
+            }
+            not_add_devis_ajax:
+
+            // demandedevis_show
+            if (preg_match('#^/demandedevis/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_demandedevis_show;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'demandedevis_show')), array (  '_controller' => 'MB\\AdminBundle\\Controller\\DemandeDevisController::showAction',));
+            }
+            not_demandedevis_show:
+
+            // demandedevis_edit
+            if (preg_match('#^/demandedevis/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_demandedevis_edit;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'demandedevis_edit')), array (  '_controller' => 'MB\\AdminBundle\\Controller\\DemandeDevisController::editAction',));
+            }
+            not_demandedevis_edit:
+
+            // demandedevis_delete
+            if (preg_match('#^/demandedevis/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'DELETE') {
+                    $allow[] = 'DELETE';
+                    goto not_demandedevis_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'demandedevis_delete')), array (  '_controller' => 'MB\\AdminBundle\\Controller\\DemandeDevisController::deleteAction',));
+            }
+            not_demandedevis_delete:
+
+        }
+
         if (0 === strpos($pathinfo, '/admin')) {
             if (0 === strpos($pathinfo, '/admin/user')) {
                 // user_index
@@ -165,6 +238,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_delete')), array (  '_controller' => 'MB\\AdminBundle\\Controller\\UserController::deleteAction',));
                 }
                 not_user_delete:
+
+                // user_delete_btn
+                if (0 === strpos($pathinfo, '/admin/user/delete') && preg_match('#^/admin/user/delete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_user_delete_btn;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_delete_btn')), array (  '_controller' => 'MB\\AdminBundle\\Controller\\UserController::deleteBtnAction',));
+                }
+                not_user_delete_btn:
 
                 // status_change
                 if ($pathinfo === '/admin/user/change/status') {

@@ -1,3 +1,7 @@
+mb_admin_demande_devis:
+    resource: "@MBAdminBundle/Controller/DemandeDevisController.php"
+    type:     annotation
+
 mb_admin_user:
     resource: "@MBAdminBundle/Controller/UserController.php"
     type:     annotation

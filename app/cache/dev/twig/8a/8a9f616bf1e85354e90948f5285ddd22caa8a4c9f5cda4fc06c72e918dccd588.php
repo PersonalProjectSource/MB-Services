@@ -15,8 +15,8 @@ class __TwigTemplate_a8b3c090b9629f53829ef3725d97e9ac7be9e711c02915d1b7d238a750f
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_6c5defefa31f3b28d1b5b67f2f0025f078568044405c9887a4efe09ff3f38825 = $this->env->getExtension("native_profiler");
-        $__internal_6c5defefa31f3b28d1b5b67f2f0025f078568044405c9887a4efe09ff3f38825->enter($__internal_6c5defefa31f3b28d1b5b67f2f0025f078568044405c9887a4efe09ff3f38825_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@MBAdmin/Widget/statesBoard.html.twig"));
+        $__internal_2123e7fcaa54eb478e2ae23967a7cf928c5004c6c0082884b417e8d386753ed3 = $this->env->getExtension("native_profiler");
+        $__internal_2123e7fcaa54eb478e2ae23967a7cf928c5004c6c0082884b417e8d386753ed3->enter($__internal_2123e7fcaa54eb478e2ae23967a7cf928c5004c6c0082884b417e8d386753ed3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@MBAdmin/Widget/statesBoard.html.twig"));
 
         // line 1
         echo "<!--state overview start-->
@@ -28,7 +28,7 @@ class __TwigTemplate_a8b3c090b9629f53829ef3725d97e9ac7be9e711c02915d1b7d238a750f
             </div>
             <div class=\"value\">
                 <h1 class=\"count\">
-                    23
+                    0
                 </h1>
                 <p>Demande de devis (semaine)</p>
             </div>
@@ -41,9 +41,9 @@ class __TwigTemplate_a8b3c090b9629f53829ef3725d97e9ac7be9e711c02915d1b7d238a750f
             </div>
             <div class=\"value\">
                 <h1 class=\" count2\">
-                    63 %
+                    0
                 </h1>
-                <p>Taux de conversion</p>
+                <p>Prestation en cours</p>
             </div>
         </section>
     </div>
@@ -56,7 +56,7 @@ class __TwigTemplate_a8b3c090b9629f53829ef3725d97e9ac7be9e711c02915d1b7d238a750f
                 <h1 class=\" count3\">
                     0
                 </h1>
-                <p>New Order</p>
+                <p>Prestations terminées</p>
             </div>
         </section>
     </div>
@@ -69,14 +69,14 @@ class __TwigTemplate_a8b3c090b9629f53829ef3725d97e9ac7be9e711c02915d1b7d238a750f
                 <h1 class=\" count4\">
                     0
                 </h1>
-                <p>Total Profit</p>
+                <p>Bénéfices total</p>
             </div>
         </section>
     </div>
 </div>
 <!--state overview end-->";
         
-        $__internal_6c5defefa31f3b28d1b5b67f2f0025f078568044405c9887a4efe09ff3f38825->leave($__internal_6c5defefa31f3b28d1b5b67f2f0025f078568044405c9887a4efe09ff3f38825_prof);
+        $__internal_2123e7fcaa54eb478e2ae23967a7cf928c5004c6c0082884b417e8d386753ed3->leave($__internal_2123e7fcaa54eb478e2ae23967a7cf928c5004c6c0082884b417e8d386753ed3_prof);
 
     }
 
@@ -99,7 +99,7 @@ class __TwigTemplate_a8b3c090b9629f53829ef3725d97e9ac7be9e711c02915d1b7d238a750f
 /*             </div>*/
 /*             <div class="value">*/
 /*                 <h1 class="count">*/
-/*                     23*/
+/*                     0*/
 /*                 </h1>*/
 /*                 <p>Demande de devis (semaine)</p>*/
 /*             </div>*/
@@ -112,9 +112,9 @@ class __TwigTemplate_a8b3c090b9629f53829ef3725d97e9ac7be9e711c02915d1b7d238a750f
 /*             </div>*/
 /*             <div class="value">*/
 /*                 <h1 class=" count2">*/
-/*                     63 %*/
+/*                     0*/
 /*                 </h1>*/
-/*                 <p>Taux de conversion</p>*/
+/*                 <p>Prestation en cours</p>*/
 /*             </div>*/
 /*         </section>*/
 /*     </div>*/
@@ -127,7 +127,7 @@ class __TwigTemplate_a8b3c090b9629f53829ef3725d97e9ac7be9e711c02915d1b7d238a750f
 /*                 <h1 class=" count3">*/
 /*                     0*/
 /*                 </h1>*/
-/*                 <p>New Order</p>*/
+/*                 <p>Prestations terminées</p>*/
 /*             </div>*/
 /*         </section>*/
 /*     </div>*/
@@ -140,7 +140,7 @@ class __TwigTemplate_a8b3c090b9629f53829ef3725d97e9ac7be9e711c02915d1b7d238a750f
 /*                 <h1 class=" count4">*/
 /*                     0*/
 /*                 </h1>*/
-/*                 <p>Total Profit</p>*/
+/*                 <p>Bénéfices total</p>*/
 /*             </div>*/
 /*         </section>*/
 /*     </div>*/

@@ -15,8 +15,8 @@ class __TwigTemplate_fec78920b2f293aec8701b55d66ea944d67ff4ed2bd370979a5c8828e61
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_41abba25ce81ca6eafe69a8b2014357546e57a5855c517bccbbcd0228fc18ba7 = $this->env->getExtension("native_profiler");
-        $__internal_41abba25ce81ca6eafe69a8b2014357546e57a5855c517bccbbcd0228fc18ba7->enter($__internal_41abba25ce81ca6eafe69a8b2014357546e57a5855c517bccbbcd0228fc18ba7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@MBAdmin/Menu/left-menu.html.twig"));
+        $__internal_5de3e260d99117f04329987c1ab7e88ffbac9737abd737244caef97cc8ed8da9 = $this->env->getExtension("native_profiler");
+        $__internal_5de3e260d99117f04329987c1ab7e88ffbac9737abd737244caef97cc8ed8da9->enter($__internal_5de3e260d99117f04329987c1ab7e88ffbac9737abd737244caef97cc8ed8da9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@MBAdmin/Menu/left-menu.html.twig"));
 
         // line 1
         echo "<!--sidebar start-->
@@ -25,7 +25,19 @@ class __TwigTemplate_fec78920b2f293aec8701b55d66ea944d67ff4ed2bd370979a5c8828e61
         <!-- sidebar menu start-->
         <ul class=\"sidebar-menu\" id=\"nav-accordion\">
             <li>
-                <a href=\"index.html\">
+                <a href=\"";
+        // line 7
+        echo $this->env->getExtension('routing')->getPath("mb_admin_homepage");
+        echo "\">
+                    <i class=\"fa fa-dashboard\"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href=\"";
+        // line 13
+        echo $this->env->getExtension('routing')->getPath("user_index");
+        echo "\">
                     <i class=\"fa fa-dashboard\"></i>
                     <span>Gestion des utilisateurs</span>
                 </a>
@@ -39,7 +51,16 @@ class __TwigTemplate_fec78920b2f293aec8701b55d66ea944d67ff4ed2bd370979a5c8828e61
             <li>
                 <a href=\"index.html\">
                     <i class=\"fa fa-dashboard\"></i>
-                    <span>Gestion des images</span>
+                    <span>Gestion des prestations</span>
+                </a>
+            </li>
+            <li>
+                <a href=\"";
+        // line 31
+        echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
+        echo "\">
+                    <i class=\"fa fa-dashboard\"></i>
+                    <span>Déconnexion</span>
                 </a>
             </li>
         </ul>
@@ -48,7 +69,7 @@ class __TwigTemplate_fec78920b2f293aec8701b55d66ea944d67ff4ed2bd370979a5c8828e61
 </aside>
 <!--sidebar end-->";
         
-        $__internal_41abba25ce81ca6eafe69a8b2014357546e57a5855c517bccbbcd0228fc18ba7->leave($__internal_41abba25ce81ca6eafe69a8b2014357546e57a5855c517bccbbcd0228fc18ba7_prof);
+        $__internal_5de3e260d99117f04329987c1ab7e88ffbac9737abd737244caef97cc8ed8da9->leave($__internal_5de3e260d99117f04329987c1ab7e88ffbac9737abd737244caef97cc8ed8da9_prof);
 
     }
 
@@ -57,9 +78,14 @@ class __TwigTemplate_fec78920b2f293aec8701b55d66ea944d67ff4ed2bd370979a5c8828e61
         return "@MBAdmin/Menu/left-menu.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  22 => 1,);
+        return array (  60 => 31,  39 => 13,  30 => 7,  22 => 1,);
     }
 }
 /* <!--sidebar start-->*/
@@ -68,7 +94,13 @@ class __TwigTemplate_fec78920b2f293aec8701b55d66ea944d67ff4ed2bd370979a5c8828e61
 /*         <!-- sidebar menu start-->*/
 /*         <ul class="sidebar-menu" id="nav-accordion">*/
 /*             <li>*/
-/*                 <a href="index.html">*/
+/*                 <a href="{{ path('mb_admin_homepage') }}">*/
+/*                     <i class="fa fa-dashboard"></i>*/
+/*                     <span>Dashboard</span>*/
+/*                 </a>*/
+/*             </li>*/
+/*             <li>*/
+/*                 <a href="{{ path('user_index') }}">*/
 /*                     <i class="fa fa-dashboard"></i>*/
 /*                     <span>Gestion des utilisateurs</span>*/
 /*                 </a>*/
@@ -82,7 +114,13 @@ class __TwigTemplate_fec78920b2f293aec8701b55d66ea944d67ff4ed2bd370979a5c8828e61
 /*             <li>*/
 /*                 <a href="index.html">*/
 /*                     <i class="fa fa-dashboard"></i>*/
-/*                     <span>Gestion des images</span>*/
+/*                     <span>Gestion des prestations</span>*/
+/*                 </a>*/
+/*             </li>*/
+/*             <li>*/
+/*                 <a href="{{ path('fos_user_security_logout') }}">*/
+/*                     <i class="fa fa-dashboard"></i>*/
+/*                     <span>Déconnexion</span>*/
 /*                 </a>*/
 /*             </li>*/
 /*         </ul>*/

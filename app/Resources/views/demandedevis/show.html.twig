@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>DemandeDevis</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ demandeDevi.id }}</td>
+            </tr>
+            <tr>
+                <th>Nomsociete</th>
+                <td>{{ demandeDevi.nomSociete }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ demandeDevi.email }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ demandeDevi.telephone }}</td>
+            </tr>
+            <tr>
+                <th>Fichierjoint</th>
+                <td>{{ demandeDevi.fichierJoint }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('demandedevis_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('demandedevis_edit', { 'id': demandeDevi.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
