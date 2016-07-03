@@ -4,7 +4,13 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
             <li>
-                <a href="index.html">
+                <a href="{{ path('mb_admin_homepage') }}">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('user_index') }}">
                     <i class="fa fa-dashboard"></i>
                     <span>Gestion des utilisateurs</span>
                 </a>
@@ -18,7 +24,13 @@
             <li>
                 <a href="index.html">
                     <i class="fa fa-dashboard"></i>
-                    <span>Gestion des images</span>
+                    <span>Gestion des prestations</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('fos_user_security_logout') }}">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Déconnexion</span>
                 </a>
             </li>
         </ul>

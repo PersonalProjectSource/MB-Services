@@ -43,6 +43,13 @@ class DemandeDevis
     private $telephone;
 
     /**
+     * @var text
+     *
+     * @ORM\Column(name="telephone", type="text", nullable=true)
+     */
+    private $message;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="fichierJoint", type="string", length=255, nullable=true)
@@ -130,6 +137,30 @@ class DemandeDevis
     public function getTelephone()
     {
         return $this->telephone;
+    }
+
+    /**
+     * Set message
+     *
+     * @param string $telephone
+     *
+     * @return DemandeDevis
+     */
+    public function setMessage($message)
+    {
+        $this->message = $message;
+
+        return $this;
+    }
+
+    /**
+     * Get message
+     *
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->message;
     }
 
     /**

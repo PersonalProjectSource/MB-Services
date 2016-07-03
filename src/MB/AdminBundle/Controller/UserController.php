@@ -50,10 +50,15 @@ class UserController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            // $username, $password, $email, $enabled initialization.
+            extract($request->request->get('user'));
+            $manipulator = $this->get('fos_user.util.user_manipulator');
+            $user = $manipulator->create($username, $password, $email, $enabled, true);
+
             $em->persist($user);
             $em->flush();
 
-            return $this->redirectToRoute('user_show', array('id' => $user->getId()));
+            return $this->redirectToRoute('user_index');
         }
 
         return $this->render('user/new.html.twig', array(
@@ -72,7 +77,7 @@ class UserController extends Controller
     {
         $deleteForm = $this->createDeleteForm($user);
 
-        return $this->render('user/show.json.twig', array(
+        return $this->render('user/show.html.twig', array(
             'user' => $user,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -126,6 +131,21 @@ class UserController extends Controller
     }
 
     /**
+     * Deletes a User entity.
+     *
+     * @Route("/delete/{id}", name="user_delete_btn")
+     * @Method("GET")
+     */
+    public function deleteBtnAction(Request $request, User $user)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($user);
+        $em->flush();
+
+        return $this->redirectToRoute('user_index');
+    }
+
+    /**
      * Creates a form to delete a User entity.
      *
      * @param User $user The User entity
@@ -148,6 +168,7 @@ class UserController extends Controller
      */
     public function statusAjaxAction(Request $request)
     {
+
         $userId = $request->request->get('userId');
         $em = $this->getDoctrine()->getManager();
         $userRepo = $em->getRepository('MBAdminBundle:User');

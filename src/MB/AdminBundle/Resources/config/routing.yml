@@ -7,4 +7,3 @@ mb_admin_login:
     path:     /login/
     defaults:
         _controller: "MBAdminBundle:Security:login"
-#        _controller: "FOSUserBundle:Security:login"

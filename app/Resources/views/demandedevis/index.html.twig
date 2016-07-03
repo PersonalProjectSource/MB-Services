@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>DemandeDevis list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nomsociete</th>
+                <th>Email</th>
+                <th>Telephone</th>
+                <th>Fichierjoint</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for demandeDevi in demandeDevis %}
+            <tr>
+                <td><a href="{{ path('demandedevis_show', { 'id': demandeDevi.id }) }}">{{ demandeDevi.id }}</a></td>
+                <td>{{ demandeDevi.nomSociete }}</td>
+                <td>{{ demandeDevi.email }}</td>
+                <td>{{ demandeDevi.telephone }}</td>
+                <td>{{ demandeDevi.fichierJoint }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('demandedevis_show', { 'id': demandeDevi.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('demandedevis_edit', { 'id': demandeDevi.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('demandedevis_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}
