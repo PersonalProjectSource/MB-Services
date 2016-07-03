@@ -1,6 +1,4 @@
 <!doctype html>
-
-
 <html lang="en" class="no-js">
 <head>
     <title>MB-Services</title>
@@ -76,7 +74,7 @@
                         <ul>	<!-- SLIDE  -->
                             <li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-saveperformance="on"  data-title="Intro Slide">
                                 <!-- MAIN IMAGE -->
-                                <img src="{{ asset('bundles/mbmbservices/images/camion1.jpg') }}"  alt="slidebg1" data-lazyload="{{ asset('bundles/mbmbservices/images/camion1.jpg') }}" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+                                <img src="{{ asset('bundles/mbmbservices/images/reactivite.jpg') }}"  alt="slidebg1" data-lazyload="{{ asset('bundles/mbmbservices/images/reactivite.jpg') }}" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
                                 <!-- LAYERS -->
 
                                 <!-- LAYER NR. 1 -->
@@ -151,7 +149,8 @@
                                      data-splitout="none"
                                      data-elementdelay="0.1"
                                      data-endelementdelay="0.1"
-                                     style="z-index: 8; max-width: auto; max-height: auto; white-space: nowrap;">Déménager n'est jamais<br>facile
+                                     style="z-index: 8; max-width: auto; max-height: auto; white-space: nowrap;">Vous êtes réactif ?
+                                    <br>Nous aussi !
                                 </div>
 
                             </li>
@@ -159,7 +158,7 @@
                             <!-- SLIDE  -->
                             <li data-transition="fade" data-slotamount="7" data-masterspeed="2000" data-saveperformance="on"  data-title="Ken Burns Slide">
                                 <!-- MAIN IMAGE -->
-                                <img src="{{ asset('bundles/mbmbservices/images/camion2.jpg') }}"  alt="2" data-lazyload="{{ asset('bundles/mbmbservices/images/camion3.jpg') }}" data-bgposition="right top" data-kenburns="on" data-duration="12000" data-ease="Power0.easeInOut" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center bottom">
+                                <img src="{{ asset('bundles/mbmbservices/images/camion2.jpg') }}"  alt="2" data-lazyload="{{ asset('bundles/mbmbservices/images/prisma.jpg') }}" data-bgposition="right top" data-kenburns="on" data-duration="12000" data-ease="Power0.easeInOut" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center bottom">
                                 <!-- LAYERS -->
 
                                 <!-- LAYER NR. 1 -->
@@ -550,16 +549,12 @@
             <!-- quote-section
                 ================================================== -->
             <section class="quote-section">
-
                 <div id="map"></div>
-
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-5 col-sm-offset-7">
-
                             <div class="quote-box">
                                 <h1>Demande de devis gratuit</h1>
-
                                 {#<form id="contact-form" data-route="{{ path('add_devis_ajax')}}">#}
                                     {#<input name="name" id="name" type="text" placeholder="Nom">#}
                                     {#<input name="mail" id="mail" type="text" placeholder="Email">#}
@@ -568,10 +563,8 @@
                                     {#<input type="submit" id="submit_contact" value="Envoyer">#}
                                     {#<div id="msg" class="message"></div>#}
                                 {#</form>#}
-
                                 <form id="contact-form" data-route="{{ path('add_devis_ajax')}}">
                                     {{ form_start(form) }}
-
                                     {{ form_widget(form.nomSociete, {'attr': {'placeholder': 'Nom de la société', 'id': 'name'}}) }}
                                     {{ form_widget(form.email,{'attr':{'placeholder': 'E-mail'}}) }}
                                     {{ form_widget(form.telephone, {'attr':{'placeholder': 'Téléphone'}}) }}
@@ -579,25 +572,14 @@
                                     {{ form_widget(form.fichierJoint, {'attr':{'class': 'default'}}) }}<br>
                                     <input type="submit" id="submit_contact" value="Envoyer">
                                     <div id="msg" class="message"></div>
-
-
-                                    {#<input name="name" id="name" type="text" placeholder="Nom">#}
-                                    {#<input name="mail" id="mail" type="text" placeholder="Email">#}
-                                    {#<input name="tel-number" id="tel-number" type="text" placeholder="Téléphone">#}
-                                    {#<textarea name="comment" id="comment" placeholder="Message"></textarea>#}
-                                    {#<input type="submit" id="submit_contact" value="Envoyer">#}
-                                    {#<div id="msg" class="message"></div>#}
                                     {{ form_end(form) }}
                                 </form>
                             </div>
-
                         </div>
                     </div>
                 </div>
-
             </section>
             <!-- End quote section -->
-
             <!-- testimonial-section
                 ================================================== -->
             <section class="testimonial-section">
@@ -638,35 +620,35 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <ul class="client-list">
+                                {#<li>#}
+                                    {#<a href="#"><img src="{{ asset('bundles/mbmbservices/images/clients/client1.png') }}" alt=""></a>#}
+                                {#</li>#}
+                                {#<li>#}
+                                    {#<a href="#"><img src="{{ asset('bundles/mbmbservices/images/clients/client2.png') }}" alt=""></a>#}
+                                {#</li>#}
+                                {#<li>#}
+                                    {#<a href="#"><img src="{{ asset('bundles/mbmbservices/images/clients/client3.png') }}" alt=""></a>#}
+                                {#</li>#}
+                                {#<li>#}
+                                    {#<a href="#"><img src="{{ asset('bundles/mbmbservices/images/clients/client4.png') }}" alt=""></a>#}
+                                {#</li>#}
+                                {#<li>#}
+                                    {#<a href="#"><img src="{{ asset('bundles/mbmbservices/images/clients/client5.png') }}" alt=""></a>#}
+                                {#</li>#}
                                 <li>
-                                    <a href="#"><img src="{{ asset('bundles/mbmbservices/images/clients/client1.png') }}" alt=""></a>
+                                    <a href="#"><img src="{{ asset('bundles/mbmbservices/images/partenaires/tag_aviation.png') }}" alt=""></a>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="{{ asset('bundles/mbmbservices/images/clients/client2.png') }}" alt=""></a>
+                                    <a href="#"><img src="{{ asset('bundles/mbmbservices/images/partenaires/tony_franck.png') }}" alt=""></a>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="{{ asset('bundles/mbmbservices/images/clients/client3.png') }}" alt=""></a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{ asset('bundles/mbmbservices/images/clients/client4.png') }}" alt=""></a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{ asset('bundles/mbmbservices/images/clients/client5.png') }}" alt=""></a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{ asset('bundles/mbmbservices/images/clients/client6.png') }}" alt=""></a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{ asset('bundles/mbmbservices/images/clients/client1.png') }}" alt=""></a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{ asset('bundles/mbmbservices/images/clients/client2.png') }}" alt=""></a>
+                                    <a href="#"><img src="{{ asset('bundles/mbmbservices/images/partenaires/prestbike.png') }}" alt=""></a>
                                 </li>
                             </ul>
                         </div>
                         <div class="col-sm-6">
                             <blockquote>
-                                <p>Nombreux sont les clients et partenaires qui nous font confiance tous les jours <br><span>Voulez-vous être le prochain </span> ?</p>
+                                <p>Ils ont choisi de nous faire confiance.  <br><span>Voulez-vous être le prochain </span> ?</p>
                             </blockquote>
                         </div>
                     </div>

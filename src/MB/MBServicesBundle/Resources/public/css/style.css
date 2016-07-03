@@ -970,6 +970,7 @@ button.mfp-arrow {
   margin-bottom: -20px;
 }
 .clients-section ul.client-list li {
+  padding: 10px;
   float: left;
   width: 25%;
   margin-bottom: 20px;
