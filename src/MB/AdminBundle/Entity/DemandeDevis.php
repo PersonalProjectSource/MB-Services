@@ -3,6 +3,7 @@
 namespace MB\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * DemandeDevis
@@ -45,16 +46,18 @@ class DemandeDevis
     /**
      * @var text
      *
-     * @ORM\Column(name="telephone", type="text", nullable=true)
+     * @ORM\Column(name="message", type="text", nullable=true)
      */
     private $message;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="fichierJoint", type="string", length=255, nullable=true)
+     *
+     * @ORM\Column(name="document", type="string", nullable=true)
+     * @Assert\File(mimeTypes={"application/pdf"})
      */
-    private $fichierJoint;
+    private $document;
 
 
     /**
@@ -170,9 +173,9 @@ class DemandeDevis
      *
      * @return DemandeDevis
      */
-    public function setFichierJoint($fichierJoint)
+    public function setFichierJoint($document)
     {
-        $this->fichierJoint = $fichierJoint;
+        $this->document = $document;
 
         return $this;
     }
@@ -184,7 +187,7 @@ class DemandeDevis
      */
     public function getFichierJoint()
     {
-        return $this->fichierJoint;
+        return $this->document;
     }
 }
 
