@@ -2,9 +2,6 @@
 <html lang="en" class="no-js">
 <head>
     <title>MB-Services</title>
-
-    <meta charset="utf-8">
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -564,6 +561,7 @@
                                     {#<div id="msg" class="message"></div>#}
                                 {#</form>#}
                                 <form id="contact-form" data-route="{{ path('add_devis_ajax')}}">
+                                    <div id="msg" class="message" style="color:white; border:#00a6b2; background-color: #00a6b2; margin-bottom: 15px; padding-bottom: 28px; border-radius: 5px;display:none">Demande de devis envoyée</div>
                                     {{ form_start(form) }}
                                     {{ form_widget(form.nomSociete, {'attr': {'placeholder': 'Nom de la société', 'id': 'name'}}) }}
                                     {{ form_widget(form.email,{'attr':{'placeholder': 'E-mail'}}) }}
@@ -571,7 +569,6 @@
                                     {{ form_widget(form.message, {'attr':{'placeholder': 'Message'}}) }}
                                     {{ form_widget(form.fichierJoint, {'attr':{'class': 'default'}}) }}<br>
                                     <input type="submit" id="submit_contact" value="Envoyer">
-                                    <div id="msg" class="message"></div>
                                     {{ form_end(form) }}
                                 </form>
                             </div>
@@ -673,7 +670,7 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="footer-widget">
-                                    <h2>Flickr widget</h2>
+                                    <h2>Widgets</h2>
                                     <ul class="flickr">
                                         <li><a href="#"><img src="{{ asset('bundles/mbmbservices/upload/flickr/1.jpg') }}" alt=""></a></li>
                                         <li><a href="#"><img src="{{ asset('bundles/mbmbservices/upload/flickr/4.jpg') }}" alt=""></a></li>
