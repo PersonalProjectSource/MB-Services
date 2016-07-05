@@ -68,17 +68,15 @@ class DemandeDevisController extends Controller
      */
     public function addDevisAjaxAction(Request $request)
     {
-        dump($request->request);die;
         $demandeDevi = new DemandeDevis();
         $form = $this->createForm('MB\AdminBundle\Form\DemandeDevisType', $demandeDevi);
         $form->handleRequest($request);
-
+        $response = ['status' => 'ok', 'message' => 'Le devis n\'a pas pu être enregistré'];
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($demandeDevi);
             $em->flush();
-
-            return $this->redirectToRoute('demandedevis_show', array('id' => $demandeDevi->getId()));
+            $response = ['status' => 'ok', 'message' => 'le devis est bien enregistré'];
         }
 
         return new JsonResponse($response);
