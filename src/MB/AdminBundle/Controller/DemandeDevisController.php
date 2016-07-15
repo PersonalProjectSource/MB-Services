@@ -2,6 +2,7 @@
 
 namespace MB\AdminBundle\Controller;
 
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -9,6 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use MB\AdminBundle\Entity\DemandeDevis;
 use MB\AdminBundle\Form\DemandeDevisType;
+
 
 /**
  * DemandeDevis controller.
@@ -28,7 +30,6 @@ class DemandeDevisController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $demandeDevis = $em->getRepository('MBAdminBundle:DemandeDevis')->findAll();
-
         return $this->render('demandedevis/index.html.twig', array(
             'demandeDevis' => $demandeDevis,
         ));
@@ -71,9 +72,20 @@ class DemandeDevisController extends Controller
         $demandeDevi = new DemandeDevis();
         $form = $this->createForm('MB\AdminBundle\Form\DemandeDevisType', $demandeDevi);
         $form->handleRequest($request);
+        /** @var UploadedFile $document */
+        $document = $demandeDevi->getDocument();
+        $photoDir = $this->container->getParameter('kernel.root_dir').'/../web/uploads/images';
+        $fileName = $document->getClientOriginalName();
+//        dump($photoDir, $fileName, $document->getBasename());
+//        dump($document->getFilename());
+        $form = $this->createForm('MB\AdminBundle\Form\DemandeDevisType', $demandeDevi);
+        $form->handleRequest($request);
         $response = ['status' => 'ok', 'message' => 'Le devis n\'a pas pu être enregistré'];
+
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $document->move($photoDir, $fileName);
+//            dump($document->getPath());
             $em->persist($demandeDevi);
             $em->flush();
             $response = ['status' => 'ok', 'message' => 'le devis est bien enregistré'];

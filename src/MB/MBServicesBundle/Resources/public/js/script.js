@@ -93,34 +93,112 @@ $(document).ready(function($) {
 	/*	Contact Form
 	/* ---------------------------------------------------------------------- */
 
-	var submitContact = $('#submit_contact'),
-		message = $('#msg');
+//
+// 	// Variable to store your files
+// 	var files;
+// 	// Add events
+// 	$('input[type=file]').on('change', prepareUpload);
+// 	// Grab the files and set them to our variable
+// 	function prepareUpload(event)
+// 	{
+// 		files = event.target.files;
+// 	}
+//
+// 	$('form').on('submit', uploadFiles);
+// 	console.log('started ...');
+// 	// Catch the form submit and upload the files
+// 	function uploadFiles(event)
+// 	{
+// 		console.log('fonction script public ... ');
+// 		event.stopPropagation(); // Stop stuff happening
+// 		event.preventDefault(); // Totally stop stuff happening
+// 		// START A LOADING SPINNER HERE
+// 		// Create a formdata object and add the files
+// 		var data = new FormData();
+// 		$.each(files, function(key, value)
+// 		{
+// 			data.append("demande_devis[document]", value);
+// 		});
+//
+// 		data.append('demande_devis[nomSociete]', $('#demande_devis_nomSociete').val());
+// 		data.append('demande_devis[email]', $('#demande_devis_mail').val());
+// 		data.append('demande_devis[telephone]', $('#demande_devis_telephone').val());
+// 		data.append('demande_devis[message]', $('#demande_devis_message').val());
+// 		data.append('demande_devis[submit]', $('#demande_devis_submit').val());
+//
+// 		$.ajax({
+// 			url: $('#contact-form').attr('data-route'),
+// 			type: 'POST',
+// 			data: data,
+// 			cache: false,
+// 			dataType: 'json',
+// 			processData: false, // Don't process the files
+// 			contentType: false, // Set content type to false as jQuery will tell the server its a query string request
+// 			success: function(data, textStatus, jqXHR)
+// 			{
+// 				if(typeof data.error === 'undefined')
+// 				{
+// 					// Success so call function to process the form
+// 					console.log('success ajax');
+// //                            submitForm(event, data);
+// 				}
+// 				else
+// 				{
+// 					// Handle errors here
+// 					console.log('ERRORS: ' + data.error);
+// 				}
+// 			},
+// 			error: function(jqXHR, textStatus, errorThrown)
+// 			{
+// 				// Handle errors here
+// 				console.log('ERRORS: ' + textStatus);
+// 				// STOP LOADING SPINNER
+// 			}
+// 		});
+// 	}
 
-	submitContact.on('click', function(e){
-		console.log('sonde 2');
-		console.log($('#contact-form').attr('data-route'));
 
-		e.preventDefault();
 
-		var $this = $(this);
-		
-		$.ajax({
-			type: "POST",
-			url: $('#contact-form').attr('data-route'),
-			dataType: 'json',
-			cache: false,
-			data: $('#contact-form').serialize(),
-			success: function(data) {
 
-				if(data.info !== 'error'){
-					$this.parents('form').find('input[type=text],textarea,select').filter(':visible').val('');
-					message.hide().removeClass('success').removeClass('error').addClass('success').html(data.msg).fadeIn('slow').delay(5000).fadeOut('slow');
-				} else {
-					message.hide().removeClass('success').removeClass('error').addClass('error').html(data.msg).fadeIn('slow').delay(5000).fadeOut('slow');
-				}
-			}
-		});
-	});
+
+
+
+
+
+
+    //
+	// var submitContact = $('#submit_contact'),
+	// 	message = $('#msg');
+    //
+	// submitContact.on('click', function(e) {
+	// 	console.log('sonde 2');
+	// 	console.log($('#contact-form').attr('data-route'));
+	// 	console.log('sonde file', $(this));
+    //
+	// 	e.preventDefault();
+    //
+	// 	var $this = $(this);
+	// 	var file = new FormData();
+	//
+	// 	$.ajax({
+	// 		type: "POST",
+	// 		url: $('#contact-form').attr('data-route'),
+	// 		dataType: 'json',
+	// 		cache: false,
+	// 		enctype: 'multipart/form-data',
+	// 		data: $('#contact-form').serialize(),
+	// 		// data: file,
+	// 		success: function(data) {
+    //
+	// 			if(data.info !== 'error'){
+	// 				$this.parents('form').find('input[type=text],textarea,select').filter(':visible').val('');
+	// 				message.hide().removeClass('success').removeClass('error').addClass('success').html(data.msg).fadeIn('slow').delay(5000).fadeOut('slow');
+	// 			} else {
+	// 				message.hide().removeClass('success').removeClass('error').addClass('error').html(data.msg).fadeIn('slow').delay(5000).fadeOut('slow');
+	// 			}
+	// 		}
+	// 	});
+	// });
 
 	
 	/* ---------------------------------------------------------------------- */

@@ -53,9 +53,7 @@ class DemandeDevis
     /**
      * @var string
      *
-     *
      * @ORM\Column(name="document", type="string", nullable=true)
-     * @Assert\File(mimeTypes={"application/pdf"})
      */
     private $document;
 
@@ -173,7 +171,7 @@ class DemandeDevis
      *
      * @return DemandeDevis
      */
-    public function setFichierJoint($document)
+    public function setDocument($document)
     {
         $this->document = $document;
 
@@ -185,7 +183,7 @@ class DemandeDevis
      *
      * @return string
      */
-    public function getFichierJoint()
+    public function getDocument()
     {
         return $this->document;
     }

@@ -19,7 +19,7 @@ class DemandeDevisType extends AbstractType
             ->add('email')
             ->add('telephone')
             ->add('message', 'text')
-            ->add('fichierJoint', 'file')
+            ->add('document', 'file')
         ;
     }
     

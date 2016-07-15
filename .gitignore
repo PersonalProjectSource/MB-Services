@@ -2,6 +2,9 @@
 /app/bootstrap*
 /app/cache/*
 /app/logs/*
+/app/config/parameters.yml
 /vendor/
 /.idea/*
 /app/config/parameters.ini
+!web/.htaccess
+
