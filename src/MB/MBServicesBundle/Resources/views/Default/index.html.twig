@@ -544,30 +544,7 @@
 
                     <!-- quote-section
                         ================================================== -->
-                    <section class="quote-section">
-                        <div id="map"></div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-sm-5 col-sm-offset-7">
-                                    <div class="quote-box">
-                                        <h1>Demande de devis gratuit</h1>
-                                        {#<form id="contact-form" data-route="{{ path('add_devis_ajax')}}" enctype="multipart/form-data">#}
-                                            <div id="msg" class="message" style="color:white; border:#00a6b2; background-color: #00a6b2; margin-bottom: 15px; padding-bottom: 28px; border-radius: 5px;display:none">Demande de devis envoyée</div>
-                                        {{ form_errors(form) }}
-                                        {{ form_start(form, {'attr':{'id':'contact-form', 'data-route': path('add_devis_ajax')}}) }}
-                                            {{ form_widget(form.nomSociete, {'attr': {'placeholder': 'Nom de la société', 'id': 'name'}}) }}
-                                            {{ form_widget(form.email,{'attr':{'placeholder': 'E-mail'}}) }}
-                                            {{ form_widget(form.telephone, {'attr':{'placeholder': 'Téléphone'}}) }}
-                                            {{ form_widget(form.message, {'attr':{'placeholder': 'Message'}}) }}
-                                            {{ form_widget(form.document, {'attr':{'class': 'default ajax_file'}}) }}<br>
-                                            <input type="submit" id="submit_contact" value="Envoyer">
-                                            {{ form_end(form) }}
-                                        {#</form>#}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                    {% include "MBMBServicesBundle:form:ask_quote.html.twig" %}
                     <!-- End quote section -->
                     <!-- testimonial-section
                         ================================================== -->
@@ -716,8 +693,9 @@
         <!-- Revolution slider -->
         <script type="text/javascript">
             jQuery(document).ready(function() {
+                var message = $('#msg');
                 console.log('sonde started');
-                // Variable to store your files
+                // Variable to store my files
                 var files;
                 // Add events
                 $('input[type=file]').on('change', prepareUpload);
@@ -732,6 +710,8 @@
                 // Catch the form submit and upload the files
                 function uploadFiles(event)
                 {
+                    message.addClass("ask-quote-info");
+                    message.html("Analyse du contenu ...").show(); // TODO mettre un loader pour le temps d'analyse.
                     event.stopPropagation(); // Stop stuff happening
                     event.preventDefault(); // Totally stop stuff happening
                     // START A LOADING SPINNER HERE
@@ -763,6 +743,11 @@
                             if(typeof data.error === 'undefined')
                             {
                                 console.log('success ajax');
+                                // TODO reset le form apres le succes.
+                                // TODO changer la couleur pour l'affichage du succes.
+                                message.removeClass("ask-quote-info");
+                                message.addClass("ask-quote-success");
+                                message.html(data.message).fadeIn('slow').delay(5000).fadeOut('slow');
                             }
                             else
                             {
@@ -771,9 +756,7 @@
                         },
                         error: function(jqXHR, textStatus, errorThrown)
                         {
-                            // Handle errors here
                             console.log('ERRORS: ' + textStatus);
-                            // STOP LOADING SPINNER
                         }
                     });
                 }

@@ -2189,3 +2189,27 @@ footer p.copyright {
     height: 200px;
   }
 }
+
+.ask-quote {
+  display:none;
+}
+
+.ask-quote-info {
+  color:white;
+  border:#00a6b2;
+  background-color: #00a6b2;
+  margin-bottom: 15px;
+  padding-bottom: 28px;
+  border-radius: 5px;
+  display:none;
+}
+
+.ask-quote-success {
+  color:white;
+  border: #34b256;
+  background-color: #38b260;
+  margin-bottom: 15px;
+  padding-bottom: 28px;
+  border-radius: 5px;
+  display:none;
+}
