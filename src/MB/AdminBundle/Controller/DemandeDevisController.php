@@ -72,12 +72,12 @@ class DemandeDevisController extends Controller
         $demandeDevi = new DemandeDevis();
         $form = $this->createForm('MB\AdminBundle\Form\DemandeDevisType', $demandeDevi);
         $form->handleRequest($request);
+        
         /** @var UploadedFile $document */
         $document = $demandeDevi->getDocument();
         $photoDir = $this->container->getParameter('kernel.root_dir').'/../web/uploads/images';
         $fileName = $document->getClientOriginalName();
-//        dump($photoDir, $fileName, $document->getBasename());
-//        dump($document->getFilename());
+        
         $form = $this->createForm('MB\AdminBundle\Form\DemandeDevisType', $demandeDevi);
         $form->handleRequest($request);
         $response = ['status' => 'ok', 'message' => 'Le devis n\'a pas pu être enregistré'];
@@ -85,10 +85,9 @@ class DemandeDevisController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $document->move($photoDir, $fileName);
-//            dump($document->getPath());
             $em->persist($demandeDevi);
             $em->flush();
-            $response = ['status' => 'ok', 'message' => 'le devis est bien enregistré'];
+            $response = ['status' => 'ok', 'message' => 'Le devis est bien enregistré'];
         }
 
         return new JsonResponse($response);
