@@ -2,6 +2,7 @@
 
 namespace MB\AdminBundle\Controller;
 
+use MB\AdminBundle\Entity\Document;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,14 +16,14 @@ use MB\AdminBundle\Form\DemandeDevisType;
 /**
  * DemandeDevis controller.
  *
- * @Route("/demandedevis")
+ * @Route("/")
  */
 class DemandeDevisController extends Controller
 {
     /**
      * Lists all DemandeDevis entities.
      *
-     * @Route("/", name="demandedevis_index")
+     * @Route("admin/demandedevis/", name="demandedevis_index")
      * @Method("GET")
      */
     public function indexAction()
@@ -38,7 +39,7 @@ class DemandeDevisController extends Controller
     /**
      * Creates a new DemandeDevis entity.
      *
-     * @Route("/new", name="demandedevis_new")
+     * @Route("admin/new", name="demandedevis_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
@@ -64,27 +65,30 @@ class DemandeDevisController extends Controller
     /**
      * Creates a new DemandeDevis entity.
      *
-     * @Route("/add", name="add_devis_ajax")
+     * @Route("demandedevis/add", name="add_devis_ajax")
      * @Method({"GET", "POST"})
      */
     public function addDevisAjaxAction(Request $request)
     {
         $demandeDevi = new DemandeDevis();
+
         $form = $this->createForm('MB\AdminBundle\Form\DemandeDevisType', $demandeDevi);
         $form->handleRequest($request);
         
         /** @var UploadedFile $document */
         $document = $demandeDevi->getDocument();
         $photoDir = $this->container->getParameter('kernel.root_dir').'/../web/uploads/images';
-        $fileName = $document->getClientOriginalName();
-        
+
         $form = $this->createForm('MB\AdminBundle\Form\DemandeDevisType', $demandeDevi);
         $form->handleRequest($request);
         $response = ['status' => 'ok', 'message' => 'Le devis n\'a pas pu être enregistré'];
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $fileName = $document->getClientOriginalName();
+
             $document->move($photoDir, $fileName);
+            $demandeDevi->setPath($photoDir.'/'.$fileName);
             $em->persist($demandeDevi);
             $em->flush();
             $response = ['status' => 'ok', 'message' => 'Le devis est bien enregistré'];

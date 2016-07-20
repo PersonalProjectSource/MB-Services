@@ -57,6 +57,13 @@ class DemandeDevis
      */
     private $document;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="docpath", type="string", nullable=true)
+     */
+    private $docpath;
+
 
     /**
      * Get id
@@ -165,11 +172,11 @@ class DemandeDevis
     }
 
     /**
-     * Set fichierJoint
+     * Set document
      *
-     * @param string $fichierJoint
+     * @param string $document
      *
-     * @return DemandeDevis
+     * @return document
      */
     public function setDocument($document)
     {
@@ -179,13 +186,37 @@ class DemandeDevis
     }
 
     /**
-     * Get fichierJoint
+     * Get document
      *
      * @return string
      */
     public function getDocument()
     {
         return $this->document;
+    }
+
+    /**
+     * Set docpath
+     *
+     * @param string $document
+     *
+     * @return docpath
+     */
+    public function setPath($document)
+    {
+        $this->docpath = $document;
+
+        return $this;
+    }
+
+    /**
+     * Get docpath
+     *
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->docpath;
     }
 }
 
