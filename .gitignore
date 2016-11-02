@@ -5,6 +5,8 @@
 /app/config/parameters.yml
 /vendor/
 /.idea/*
+/.vagrant
+/Vagrantfile
 /app/config/parameters.ini
 !web/.htaccess
 
