@@ -2,7 +2,56 @@ mbmb_services_homepage:
     path:     /{param}
     defaults:
         _controller: "MBMBServicesBundle:Default:index"
-        param: 'tototest'
+        param: 'homepage'
         totoparam: 'valuetoto'
     requirements:
         param: '(toto|tata)/?$'
+
+mbmb_services_accueil:
+    path:     /accueil
+    defaults:
+        _controller: "MBMBServicesBundle:Default:toto"
+        param : 'accueil'
+
+mbmb_services_affretement:
+    path:     /affretement
+    defaults:
+        _controller: "MBMBServicesBundle:Default:toto"
+        param : 'affretement'
+
+mbmb_services_conseils:
+    path:     /conseils
+    defaults:
+        _controller: "MBMBServicesBundle:Default:toto"
+        param : 'conseils'
+
+
+mbmb_services_courses_exclusives:
+    path:     /courses_exclusives
+    defaults:
+        _controller: "MBMBServicesBundle:Default:display"
+        param: 'courses_exclusives'
+
+mbmb_services_demenagement:
+    path:     /demenagement
+    defaults:
+        _controller: "MBMBServicesBundle:Default:display"
+        param: 'demenagement'
+
+mbmb_services_emballage:
+    path:     /emballage
+    defaults:
+        _controller: "MBMBServicesBundle:Default:display"
+        param: 'emballage'
+
+mbmb_services_levage:
+    path:     /levage
+    defaults:
+        _controller: "MBMBServicesBundle:Default:display"
+        param: 'levage'
+
+
+mbmb_services_transport_national:
+    path:     /transport_national
+    defaults:
+        _controller: "MBMBServicesBundle:Default:display"

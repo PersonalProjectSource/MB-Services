@@ -100,8 +100,9 @@ class DemandeDevisController extends Controller
     /**
      * Finds and displays a DemandeDevis entity.
      *
-     * @Route("/{id}", name="demandedevis_show")
+     * @Route("/{id}", name="demandedevis_show", requirements={"id": "\d+"})
      * @Method("GET")
+     *
      */
     public function showAction(DemandeDevis $demandeDevi)
     {
