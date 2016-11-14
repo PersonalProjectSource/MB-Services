@@ -23,6 +23,8 @@
     <body>
         <!-- Container -->
         <div id="container">
+
+            coucou : {{ app.request.attributes.get('param') }}
             {% include "@MBMBServices/Menu/main_left_menu.html.twig" %}
             <!-- content
                 ================================================== -->
@@ -331,33 +333,8 @@
 
                     <!-- services-offer
                         ================================================== -->
-                    <section class="services-offer-section">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <div class="offer-post">
-                                        <a href="services.html"><img src="{{ asset('bundles/mbmbservices/upload/others/con22.jpg') }}" alt=""></a>
-                                        <h2><a href="services.html">Préparation</a></h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="offer-post">
-                                        <a href="services.html"><img src="{{ asset('bundles/mbmbservices/upload/others/con2.jpg') }}" alt=""></a>
-                                        <h2><a href="services.html">Collecte</a></h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="offer-post">
-                                        <a href="services.html"><img src="{{ asset('bundles/mbmbservices/upload/others/con3.jpg') }}" alt=""></a>
-                                        <h2><a href="services.html">Rangement</a></h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                    {% block page_content %}
+                    {% endblock page_content %}
                     <!-- End services-offer section -->
 
                     <!-- tabs-section
@@ -415,7 +392,7 @@
                                 <div class="col-sm-5">
 
                                     <div class="about-box">
-                                        <img src="{{ asset('bundles/mbmbservices/upload/others/iso1.jpg') }}" alt="">
+                                        <img width="382px" height="239px" src="{{ asset('bundles/mbmbservices/images/nos_valeurs.jpg') }}" alt="">
                                         <h2>Qui sommes nous ?</h2>
                                         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
                                             cillum dolore eu fugiat nulla pariatur adipisicing elit, sed do eiusmod

@@ -14,11 +14,24 @@ class DefaultController extends Controller
         $demandeDevi = new DemandeDevis();
         $form = $this->createForm('MB\AdminBundle\Form\DemandeDevisType', $demandeDevi, array( 'action' => $this->generateUrl('add_devis_ajax'), 'method' => 'post'));
         if ($request->isMethod('post')) {
-            dump('finfinfin');die;
+            dump('post submit1');die;
         }
         $client = Elasticsearch\ClientBuilder::create()->build();
 
-//        dump($request->request);die;
-        return $this->render('MBMBServicesBundle:Default:index.html.twig',['form' => $form->createView()]);
+        //dump($request);die;
+        return $this->render('MBMBServicesBundle:Default:accueil.html.twig',['form' => $form->createView()]);
+    }
+
+    public function displayAction(Request $request, $param, $totoparam)
+    {
+        $demandeDevi = new DemandeDevis();
+        $urlParam = $request->attributes->get('param');
+        $form = $this->createForm('MB\AdminBundle\Form\DemandeDevisType', $demandeDevi, array( 'action' => $this->generateUrl('add_devis_ajax'), 'method' => 'post'));
+        if ($request->isMethod('post')) {
+            dump('post submit2');die;
+        }
+        $client = Elasticsearch\ClientBuilder::create()->build();
+
+        return $this->render('MBMBServicesBundle:Default:'.$urlParam.'.html.twig',['form' => $form->createView()]);
     }
 }

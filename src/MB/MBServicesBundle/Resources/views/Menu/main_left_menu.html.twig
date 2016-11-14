@@ -9,10 +9,10 @@
 
     <nav class="nav-menu">
         <ul class="menu-list">
-            <li><a class="active" href="index.html">Accueil</a></li>
-            <li><a href="about.html">A propos ne nous</a></li>
-            <li><a href="gallery.html">Notre gallerie</a></li>
-            <li class="drop"><a href="services.html">Nos services</a>
+            <li><a class="active" href="{{ path('mbmb_services_accueil') }}">Accueil</a></li>
+            <li><a href="{{ path('mbmb_services_courses_exclusives') }}">Courses exclusives</a></li>
+            <li><a href="{{ path('mbmb_services_demenagement') }}">Déménagement</a></li>
+            <li class="drop"><a href="{{ path('mbmb_services_transport_national') }}">Transport national & international</a>
                 <ul class="dropdown">
                     <li><a href="transportation.html">Transport</a></li>
                     <li><a href="packing.html">Emballage</a></li>
@@ -22,8 +22,12 @@
                     <li><a href="delivery.html">Livraison</a></li>
                 </ul>
             </li>
-            <li><a href="blog.html">Nouveautés</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="{{ path('mbmb_services_affretement') }}">Affrêtement</a></li>
+            <li><a href="{{ path('mbmb_services_levage') }}">Levage et crutage</a></li>
+            <li><a href="{{ path('mbmb_services_accueil') }}">Entreposage</a></li>
+            <li><a href="{{ path('mbmb_services_emballage') }}">Emballage</a></li>
+            <li><a href="{{ path('mbmb_services_conseils') }}">Conseils</a></li>
+
         </ul>
     </nav>
     <div class="guide-box">

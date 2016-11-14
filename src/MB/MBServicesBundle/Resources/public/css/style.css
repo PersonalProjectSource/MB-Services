@@ -2217,3 +2217,14 @@ footer p.copyright {
   padding-top: 25px;
   text-align: center;
 }
+
+/* lbrau customisation */
+.services-offer-section .offer-post {
+  text-align: center;
+
+}
+
+.services-offer-section .offer-post > a img {
+  width: 60%;
+
+}
